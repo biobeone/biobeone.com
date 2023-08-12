@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BB1 Help</title>
+</head>
+<body>
+<iframe id="help"
+        allowFullScreen
+        webkitallowfullscreen
+        style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"
+        src="https://d2in4r54h1p6pb.cloudfront.net/pdfjs/web/viewer.html">
+</iframe>
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split('+').join(' ');
+
+        var params = {},
+            tokens,
+            re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+    var c = getQueryParams(document.location.search).c;
+//    var viewer = "https://s3-ap-northeast-1.amazonaws.com/bips-doc/pdfjs/web/viewer.html";
+    var viewer = "https://d2in4r54h1p6pb.cloudfront.net/pdfjs/web/viewer.html";
+    var loader = "?file=../../FILE_NAME.pdf#0";
+
+    if (c) {
+        loader = viewer + loader.replace("FILE_NAME", c);
+        document.getElementById("help").src=loader;
+    }
+</script>
+
+</body>
+</html>
