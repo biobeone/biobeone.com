@@ -2213,6 +2213,10 @@ html.is-builder .article .lead:not([data-app-remove-it]) + div .btn {
 .hide-free-plan {
     display: none;
 }
+.hide-bb1 {
+  visibility: hidden;
+}
+
 .stamp-free {
   position: absolute;
   top: 10px;
