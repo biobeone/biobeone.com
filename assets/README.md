@@ -1,0 +1,1 @@
+The js/css assets folders
